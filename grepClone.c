@@ -3,7 +3,7 @@
 #include <unistd.h>
 
 void ErrorMessage(char message[]);
-void GrepClone(char search[], char path[], char option[]);
+void GrepClone(char search[], char path[]);
 void HighlightPrint(char text[], char substring[]);
 
 int main(int argc, char *argv[])
@@ -13,24 +13,19 @@ int main(int argc, char *argv[])
     {
     case 3:
     {
-        GrepClone(argv[1], argv[2], "x");
-        break;
-    }
-    case 4:
-    {
-        GrepClone(argv[2], argv[3], argv[1]);
+        GrepClone(argv[1], argv[2]);
         break;
     }
     default:
     {
-        ErrorMessage("invalid arguments.\n/grepClone -[option] [searchString] [path to file]\n/grepClone [searchString] [path to file]");
+        ErrorMessage("invalid arguments.\n/grepClone [searchString] [path to file]");
     }
     }
 
     return 0;
 }
 
-void GrepClone(char search[], char path[], char option[])
+void GrepClone(char search[], char path[])
 {
     if (search == NULL)
     {
