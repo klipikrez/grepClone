@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "algorithm": "c",
+        "format": "c",
+        "charconv": "c"
+    }
+}
